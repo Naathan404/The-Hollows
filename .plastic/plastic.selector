@@ -1,0 +1,4 @@
+repository "Hollows/Hollows@18968280591013@cloud"
+  path "/"
+    br "/main"
+    co "/main"
