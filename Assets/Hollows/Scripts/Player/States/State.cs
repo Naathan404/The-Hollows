@@ -18,8 +18,8 @@ public abstract class State : MonoBehaviour
         isComplete = false;
         //Debug.Log(name);
     }
-    public virtual void UpdateState() {}
-    public virtual void FixedUpdateState() {}
+    public virtual void UpdateState() { }
+    public virtual void FixedUpdateState() { }
     public virtual void ExitState()
     {
         isComplete = true;
@@ -30,5 +30,16 @@ public abstract class State : MonoBehaviour
         this.animator = animator;
         this.rb = rb;
         this.playerMovement = playerMovement;
+    }
+    
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && playerMovement.canBeHit)
+        {
+            playerMovement.state.ExitState();
+            playerMovement.state = playerMovement.hit;
+            playerMovement.canBeHit = false;
+            playerMovement.state.EnterState();
+        }
     }
 }

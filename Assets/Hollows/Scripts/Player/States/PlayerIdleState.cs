@@ -7,4 +7,5 @@ public class PlayerIdleState : State
         if (!playerMovement.isGrounded || playerMovement.moveDirection != 0)
             ExitState();
     }
+
 }

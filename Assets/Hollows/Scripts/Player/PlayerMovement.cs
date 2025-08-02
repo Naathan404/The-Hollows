@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.XR;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerDashState dash;
     public PlayerDoubleJumpState doubleJump;
     public PlayerAttackState attack;
+    public PlayerHitState hit;
     public State state;
 
     [Header("Ground Check Settings")]
@@ -26,10 +28,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump Settings")]
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float coyoteCounter;
-    public bool canJumpTheSecondTime = false;
     [SerializeField] private float dashCoolDown;
+    public bool canJumpTheSecondTime = false;
     private float dashCounter;
-
+    public bool canBeHit = true;
 
     private bool isFacingRight = true;
 
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         dash.Setup(animator, rb, this);
         doubleJump.Setup(animator, rb, this);
         attack.Setup(animator, rb, this);
+        hit.Setup(animator, rb, this);
 
         state = idle;
         state.EnterState();
@@ -177,5 +180,14 @@ public class PlayerMovement : MonoBehaviour
             state = attack;
             state.EnterState();
         }
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        if (!canBeHit) return;
+        state.ExitState();
+        state = hit;
+        canBeHit = false;
+        state.EnterState();
     }
 }

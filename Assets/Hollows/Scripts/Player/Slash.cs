@@ -6,7 +6,8 @@ public class Slash : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.GetComponent<IHitable>().TakeDamage(1);
+            if(collision.gameObject.GetComponent<IHitable>() != null)
+                collision.gameObject.GetComponent<IHitable>().TakeDamage(1);
         }
     }
 }

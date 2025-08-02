@@ -123,6 +123,10 @@ public class Goblin : Enemy, IHitable
     private void EnterAttack()
     {
         rb.linearVelocity = Vector2.zero;
+        if (hitPlayer && hitPlayer.collider.gameObject.GetComponentInParent<PlayerMovement>().canBeHit)
+        {
+            hitPlayer.collider.gameObject.GetComponentInParent<PlayerMovement>().TakeDamage(1);
+        }
         StartCoroutine(WaitForDurationToAttackAgain(0.5f));
     }
 

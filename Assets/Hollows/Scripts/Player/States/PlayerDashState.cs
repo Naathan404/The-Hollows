@@ -30,14 +30,14 @@ public class PlayerDashState : State
         GameObject dust = beforeJumpDustPool.GetObject();
         dust.transform.position = bottomTransform.position;
         beforeJumpDustPool.ReturnToPool(dust);
-        firstPos = playerMovement.transform.position;  
+        firstPos = playerMovement.transform.position;
     }
 
     public override void UpdateState()
     {
         base.UpdateState();
         ghostCounter -= Time.deltaTime;
-        if(ghostCounter <= 0f && ghosts.Count < maxGhostCount)
+        if (ghostCounter <= 0f && ghosts.Count < maxGhostCount)
         {
             ghostCounter = ghostCoolDown;
             CreateGhost();
