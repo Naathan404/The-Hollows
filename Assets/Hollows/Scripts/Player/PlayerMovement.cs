@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
@@ -189,5 +190,13 @@ public class PlayerMovement : MonoBehaviour
         state = hit;
         canBeHit = false;
         state.EnterState();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            TakeDamage(1);
+        }
     }
 }

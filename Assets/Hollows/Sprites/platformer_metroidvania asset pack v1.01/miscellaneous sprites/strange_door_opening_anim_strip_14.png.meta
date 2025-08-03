@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -360,7 +360,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      strange_door_opening_anim_strip_14_0: 347451276584246300
+      strange_door_opening_anim_strip_14_1: -4249389619412451124
+      strange_door_opening_anim_strip_14_2: 6938579174742508395
+      strange_door_opening_anim_strip_14_3: -2650451347613823636
+      strange_door_opening_anim_strip_14_4: -5287527108188383539
+      strange_door_opening_anim_strip_14_5: 1496916291704373965
+      strange_door_opening_anim_strip_14_6: -302128725182431008
+      strange_door_opening_anim_strip_14_7: 4300021848910839685
+      strange_door_opening_anim_strip_14_8: 6099008848845824659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

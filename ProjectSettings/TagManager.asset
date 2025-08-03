@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Slash
+  - Ground
+  - Spike
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Ground
   - Enemy
   - Slash
-  - 
+  - Spike
   - 
   - 
   - 
@@ -52,8 +54,14 @@ TagManager:
   - name: Player
     uniqueID: 2865445599
     locked: 0
+  - name: Trap
+    uniqueID: 164983425
+    locked: 0
   - name: Effect
     uniqueID: 1283107635
+    locked: 0
+  - name: Foreground
+    uniqueID: 86565783
     locked: 0
   m_RenderingLayers:
   - Default
