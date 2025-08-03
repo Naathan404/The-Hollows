@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7709356447215348822}
   m_Layer: 10
   m_Name: TrapSpike
-  m_TagString: Spike
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 7534460927823245269}
   m_Layer: 10
   m_Name: Spike
-  m_TagString: Spike
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

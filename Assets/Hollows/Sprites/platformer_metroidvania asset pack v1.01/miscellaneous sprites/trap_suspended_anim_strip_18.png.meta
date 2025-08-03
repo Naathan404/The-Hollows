@@ -180,12 +180,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 44
         y: 0
-        width: 26
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 1
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 163
+        y: 2
+        width: 31
+        height: 46
+      alignment: 9
+      pivot: {x: 0.16248839, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_2
       rect:
         serializedVersion: 2
-        x: 274
-        y: 7
-        width: 45
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 275
+        y: 8
+        width: 43
+        height: 40
+      alignment: 9
+      pivot: {x: 0.119090945, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_3
       rect:
         serializedVersion: 2
-        x: 386
-        y: 16
-        width: 51
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 387
+        y: 17
+        width: 49
+        height: 33
+      alignment: 9
+      pivot: {x: 0.10188075, y: 0.9396169}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_4
       rect:
         serializedVersion: 2
-        x: 498
-        y: 19
-        width: 52
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 499
+        y: 20
+        width: 50
+        height: 32
+      alignment: 9
+      pivot: {x: 0.09870911, y: 0.8722111}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_5
       rect:
         serializedVersion: 2
-        x: 610
-        y: 19
-        width: 52
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 611
+        y: 20
+        width: 50
+        height: 32
+      alignment: 9
+      pivot: {x: 0.101002194, y: 0.87654746}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_6
       rect:
         serializedVersion: 2
-        x: 722
-        y: 16
-        width: 51
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 723
+        y: 17
+        width: 49
+        height: 33
+      alignment: 9
+      pivot: {x: 0.10226503, y: 0.9401443}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +334,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_7
       rect:
         serializedVersion: 2
-        x: 834
-        y: 7
-        width: 45
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 835
+        y: 8
+        width: 43
+        height: 40
+      alignment: 9
+      pivot: {x: 0.11720312, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_8
       rect:
         serializedVersion: 2
-        x: 946
-        y: 1
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 947
+        y: 2
+        width: 31
+        height: 46
+      alignment: 9
+      pivot: {x: 0.16017397, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_9
       rect:
         serializedVersion: 2
-        x: 1051
+        x: 1052
         y: 0
-        width: 26
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,12 +400,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_10
       rect:
         serializedVersion: 2
-        x: 1149
-        y: 1
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1150
+        y: 2
+        width: 31
+        height: 46
+      alignment: 9
+      pivot: {x: 0.8401824, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -422,12 +422,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_11
       rect:
         serializedVersion: 2
-        x: 1249
-        y: 7
-        width: 45
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1250
+        y: 8
+        width: 43
+        height: 40
+      alignment: 9
+      pivot: {x: 0.88369536, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -444,12 +444,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_12
       rect:
         serializedVersion: 2
-        x: 1355
-        y: 16
-        width: 51
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1356
+        y: 17
+        width: 49
+        height: 33
+      alignment: 9
+      pivot: {x: 0.90035325, y: 0.9398665}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -466,12 +466,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_13
       rect:
         serializedVersion: 2
-        x: 1466
-        y: 19
-        width: 52
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1467
+        y: 20
+        width: 50
+        height: 32
+      alignment: 9
+      pivot: {x: 0.9025879, y: 0.87455046}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -488,12 +488,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_14
       rect:
         serializedVersion: 2
-        x: 1578
-        y: 19
-        width: 52
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1579
+        y: 20
+        width: 50
+        height: 32
+      alignment: 9
+      pivot: {x: 0.8989209, y: 0.8749949}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -510,12 +510,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_15
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 16
-        width: 51
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1692
+        y: 17
+        width: 49
+        height: 33
+      alignment: 9
+      pivot: {x: 0.90035075, y: 0.9385612}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -532,12 +532,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_16
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 7
-        width: 45
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1810
+        y: 8
+        width: 43
+        height: 40
+      alignment: 9
+      pivot: {x: 0.88419217, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -554,12 +554,12 @@ TextureImporter:
       name: trap_suspended_anim_strip_18_17
       rect:
         serializedVersion: 2
-        x: 1933
-        y: 1
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1934
+        y: 2
+        width: 31
+        height: 46
+      alignment: 9
+      pivot: {x: 0.83893806, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -576,7 +576,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 04248eb7ae82cf6468e376d071d4f698
     internalID: 0
     vertices: []
     indices: 
