@@ -201,4 +201,5 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public Transform GetBottomPosTransform() => groundCheck.transform;
+    public Rigidbody2D GetRb2D() => rb;
 }

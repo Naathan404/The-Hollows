@@ -7,6 +7,7 @@ public class Spike : MonoBehaviour
     private RaycastHit2D hitGround;
     private void Start()
     {
+        breakDusts = GameObject.Find("SpikeDustPool").GetComponent<EffectPooler>();
     }
 
     private void Update()

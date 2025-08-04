@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: root_props_0
+  m_Name: wood_slab_middle_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 2903557301941285896, guid: 2aa5852872fea094f8926721001b94bc, type: 3}
+  m_Sprite: {fileID: -4376282656156060692, guid: dcbb6dcd1c8cc2342823253987039cf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

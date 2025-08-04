@@ -14,7 +14,7 @@ public class PlayerFallState : State
             playerMovement.state = playerMovement.doubleJump;
             playerMovement.state.EnterState();
         }
-        if (playerMovement.isGrounded || rb.linearVelocity.y > 0f)
+        if (playerMovement.isGrounded || rb.linearVelocity.y >= 0f)
         {
             ExitState();
         }
