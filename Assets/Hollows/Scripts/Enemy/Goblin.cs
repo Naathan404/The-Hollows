@@ -8,7 +8,6 @@ public class Goblin : Enemy, IHitable
     [Header("Stats")]
     [SerializeField] private float maxWallRayDistance;
     [SerializeField] private float maxPlayerRayDistance;
-    [SerializeField] private bool getHit = false;
     ///
     /// Raycasts
     private RaycastHit2D hitWall;
@@ -49,26 +48,35 @@ public class Goblin : Enemy, IHitable
     {
         isStateComplete = false;
         if (getHit)
-        {
-            animator.Play("GoblinHit");
             state = EnemyState.Hit;
-            EnterHit();
-        }
         else if (hp <= 0)
-        {
             state = EnemyState.Death;
-            EnterDeath();
-        }
         else if (hitPlayer)
-        {
-            animator.Play("GoblinAttack");
             state = EnemyState.Attack;
-            EnterAttack();
-        }
         else
-        {
-            animator.Play("GoblinRun");
             state = EnemyState.Patrol;
+        EnterState();
+    }
+
+    protected override void EnterState()
+    {
+        switch (state)
+        {
+            case EnemyState.Patrol:
+                EnterPatrol();
+                break;
+            case EnemyState.Attack:
+                EnterAttack();
+                break;
+            case EnemyState.Hit:
+                EnterHit();
+                break;
+            case EnemyState.Death:
+                EnterDeath();
+                break;
+            default:
+                //EnterIdle();
+                break;
         }
     }
 
@@ -82,69 +90,38 @@ public class Goblin : Enemy, IHitable
             case EnemyState.Patrol:
                 UpdatePatrol();
                 break;
-            case EnemyState.Attack:
-                UpdateAttack();
-                break;
-            case EnemyState.Hit:
-                UpdateHit();
-                break;
-            case EnemyState.Death:
-                UpdateDeath();
-                break;
         }
     }
 
-    private void UpdateHit()
+    /// <summary>
+    /// Enter state implementation
+    /// </summary>
+    private void EnterPatrol()
     {
-
-    }
-
-    private void UpdateIdle()
-    {
-
-    }
-
-    private void UpdatePatrol()
-    {
-        rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
-        if (hitPlayer || getHit)
-        {
-            isStateComplete = true;
-        }
-    }
-
-    private void UpdateAttack()
-    {
-        // rb.linearVelocity = Vector2.zero; // Stop movement during attack
-        // StartCoroutine(WaitForDurationToComplete());
-        // isStateComplete = true;
+        animator.Play("GoblinRun");
     }
 
     private void EnterAttack()
     {
+        animator.Play("GoblinAttack");
         rb.linearVelocity = Vector2.zero;
-        if (hitPlayer && hitPlayer.collider.gameObject.GetComponentInParent<PlayerMovement>().canBeHit)
-        {
-            hitPlayer.collider.gameObject.GetComponentInParent<PlayerMovement>().TakeDamage(1);
-        }
         StartCoroutine(WaitForDurationToAttackAgain(0.5f));
     }
 
     private void EnterHit()
     {
+        canAttack = false;
+        animator.Play("GoblinHit");
         rb.linearVelocity = Vector2.zero;
         StartCoroutine(WaitForDurationToGetHitAgain(0.8f));
     }
 
     private void EnterDeath()
     {
+        canAttack = false;
         rb.linearVelocity = Vector2.zero;
         animator.Play("GoblinDeath");
         StartCoroutine(DeactivateObject(0.8f));
-    }
-
-    private void UpdateDeath()
-    {
     }
 
     IEnumerator WaitForDurationToAttackAgain(float duration)
@@ -158,6 +135,7 @@ public class Goblin : Enemy, IHitable
         yield return new WaitForSeconds(duration);
         isStateComplete = true;
         getHit = false;
+        canAttack = true;
     }
 
     IEnumerator DeactivateObject(float duration)
@@ -166,12 +144,25 @@ public class Goblin : Enemy, IHitable
         gameObject.SetActive(false);
     }
 
+
+    private void UpdateIdle() { }
+
+    private void UpdatePatrol()
+    {
+        rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+        if (hitPlayer || getHit)
+        {
+            isStateComplete = true;
+        }
+    }
+
     public void TakeDamage(int dmg)
     {
         if (!getHit)
         {
             hp--;
             getHit = true;
+            SelectState();
         }
     }
 }
