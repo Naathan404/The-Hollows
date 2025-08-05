@@ -48,6 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sign
+    uniqueID: 3585370415
+    locked: 0
   - name: MaceTrap
     uniqueID: 2032229347
     locked: 0

@@ -75,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
         HandleDash();
         HandleAttack();
 
-        if (isGrounded) canJumpTheSecondTime = false;
         dashCounter -= Time.deltaTime;
 
         /// Change state

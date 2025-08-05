@@ -9,11 +9,12 @@ public class PlayerJumpState : State
     public override void EnterState()
     {
         base.EnterState();
-        playerMovement.canJumpTheSecondTime = true;
 
         GameObject dust = beforeJumpDustPool.GetObject();
         dust.transform.position = bottomTransform.position;
         beforeJumpDustPool.ReturnToPool(dust);
+
+        StartCoroutine(Delay());
     }
     public override void UpdateState()
     {
@@ -25,7 +26,14 @@ public class PlayerJumpState : State
         }
         else if (rb.linearVelocity.y <= 0)
         {
+            StopAllCoroutines();
             ExitState();
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        playerMovement.canJumpTheSecondTime = true;
     }
 }
