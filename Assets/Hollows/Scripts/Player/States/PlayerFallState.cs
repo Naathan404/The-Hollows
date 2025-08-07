@@ -25,6 +25,7 @@ public class PlayerFallState : State
         base.ExitState();
         GameObject dust = afterJumpDustPool.GetObject();
         dust.transform.position = bottomTransform.position;
+        playerMovement.canJumpTheSecondTime = false;
         afterJumpDustPool.ReturnToPool(dust);
     }
 }

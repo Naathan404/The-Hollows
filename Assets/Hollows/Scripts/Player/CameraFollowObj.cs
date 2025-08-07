@@ -10,6 +10,11 @@ public class CameraFollowObj : MonoBehaviour
 
     private void Awake()
     {
+    }
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<PlayerMovement>().transform;
         playerMovement = player.gameObject.GetComponent<PlayerMovement>();
         isFacingRight = playerMovement.IsFacingRight();
     }

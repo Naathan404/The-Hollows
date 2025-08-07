@@ -8,6 +8,7 @@ TagManager:
   - Slash
   - Ground
   - Trap
+  - Vase
   layers:
   - Default
   - TransparentFX

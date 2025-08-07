@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject followObj;
     [SerializeField] private float speed;
     private SpriteRenderer spriteRenderer;
     private float backgroundWidth;
@@ -14,11 +14,12 @@ public class ParallaxBackground : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         backgroundWidth = spriteRenderer.sprite.bounds.size.x;
         startPoint = transform.position.x;
+        followObj = GameObject.Find("CamFollowObj");
     }
 
     private void Update()
     {
-        float movement = player.transform.position.x * (1f - speed);
+        float movement = followObj.transform.position.x * (1f - speed);
         if (movement > startPoint + backgroundWidth)
         {
             startPoint += backgroundWidth;
@@ -31,7 +32,7 @@ public class ParallaxBackground : MonoBehaviour
 
     private void FixedUpdate()
     {
-        distance = player.transform.position.x * speed;
+        distance = followObj.transform.position.x * speed;
         transform.position = new Vector3(startPoint - distance, transform.position.y, transform.position.z);
     }
 }

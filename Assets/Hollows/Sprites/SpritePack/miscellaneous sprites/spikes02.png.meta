@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7d0bb96b75624464daa96f2683aa3dcb
+guid: 186355b0dc95c3647ba945490422e139
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -205174907844451088
-    second: vase_breaking_anim_strip_5_0
-  - first:
-      213: -5097765867964552812
-    second: vase_breaking_anim_strip_5_1
+      213: 8626282036850199148
+    second: spikes02_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vase_breaking_anim_strip_5_0
+      name: spikes02_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f4ab152282172df0800000000000000
-      internalID: -205174907844451088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vase_breaking_anim_strip_5_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 64
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 499acd3c3f81149b0800000000000000
-      internalID: -5097765867964552812
+      spriteID: c6a0acafec5b6b770800000000000000
+      internalID: 8626282036850199148
       vertices: []
       indices: 
       edges: []
@@ -176,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      vase_breaking_anim_strip_5_0: -205174907844451088
-      vase_breaking_anim_strip_5_1: -5097765867964552812
+      spikes02_0: 8626282036850199148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

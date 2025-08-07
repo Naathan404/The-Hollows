@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Profiling.LowLevel.Unsafe;
 using UnityEngine;
 
 public class PlayerJumpState : State
@@ -14,7 +15,7 @@ public class PlayerJumpState : State
         dust.transform.position = bottomTransform.position;
         beforeJumpDustPool.ReturnToPool(dust);
 
-        StartCoroutine(Delay());
+        StartCoroutine(WaitForTheSecondJump());
     }
     public override void UpdateState()
     {
@@ -31,7 +32,12 @@ public class PlayerJumpState : State
         }
     }
 
-    IEnumerator Delay()
+    public override void ExitState()
+    {
+        base.ExitState();
+    }
+
+    IEnumerator WaitForTheSecondJump()
     {
         yield return new WaitForSeconds(0.1f);
         playerMovement.canJumpTheSecondTime = true;

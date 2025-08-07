@@ -121,7 +121,7 @@ public class Goblin : Enemy, IHitable
         canAttack = false;
         rb.linearVelocity = Vector2.zero;
         animator.Play("GoblinDeath");
-        StartCoroutine(DeactivateObject(0.8f));
+        StartCoroutine(DeactivateObject(0.6f));
     }
 
     IEnumerator WaitForDurationToAttackAgain(float duration)
