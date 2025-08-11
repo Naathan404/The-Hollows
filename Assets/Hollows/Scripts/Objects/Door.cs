@@ -17,20 +17,21 @@ public class Door : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(button.activeInHierarchy)
+        {
+            if(Input.GetKeyDown(KeyCode.S))
+                StartCoroutine(LoadNextScene());
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             button.SetActive(true);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.S))
-        {
-            StartCoroutine(LoadNextScene());
         }
     }
 

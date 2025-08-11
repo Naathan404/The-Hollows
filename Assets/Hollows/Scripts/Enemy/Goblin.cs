@@ -1,46 +1,42 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Goblin : Enemy, IHitable
+public class Goblin : Enemy
 {
     [Header("Stats")]
     [SerializeField] private float maxWallRayDistance;
     [SerializeField] private float maxPlayerRayDistance;
+    [SerializeField] private float edgeRayDistance;
     ///
     /// Raycasts
     private RaycastHit2D hitWall;
     private RaycastHit2D hitPlayer;
-
-    private void Start()
-    {
-        SelectState();
-    }
+    private RaycastHit2D hitGround;
 
     private void Update()
     {
         dir = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
         hitPlayer = Physics2D.Raycast(transform.position, dir, maxPlayerRayDistance, playerLayerMask);
-        hitWall = Physics2D.Raycast(transform.position, dir, maxWallRayDistance, LayerMask.GetMask("Ground"));
-        if (hitWall)
+        hitWall = Physics2D.Raycast(transform.position, dir, maxWallRayDistance, groundLayerMask);
+        hitGround = Physics2D.Raycast(transform.position + new Vector3(edgeRayDistance * this.transform.localScale.x, 0), -Vector2.up, 1f, groundLayerMask);
+
+        // Turn around if there was a wall in front of enemy
+        if (hitWall || !hitGround)
         {
             speed *= -1f;
-            Debug.DrawRay(transform.position, dir * maxPlayerRayDistance, Color.red);
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, dir * maxPlayerRayDistance, Color.white);
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y);
         }
 
-        if (hitPlayer)
-            Debug.Log("Hit player");
+        // Draw ray on scene
+        Debug.DrawRay(transform.position, dir * maxPlayerRayDistance, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(edgeRayDistance * this.transform.localScale.x, 0), -Vector2.up * 1f, Color.yellow);
 
+        // Select new state when current state was complete
         if (isStateComplete)
-        {
             SelectState();
-        }
+
+        // Update state 
         UpdateState();
     }
 
@@ -113,7 +109,7 @@ public class Goblin : Enemy, IHitable
         canAttack = false;
         animator.Play("GoblinHit");
         rb.linearVelocity = Vector2.zero;
-        StartCoroutine(WaitForDurationToGetHitAgain(0.8f));
+        StartCoroutine(WaitForDurationToGetHitAgain());
     }
 
     private void EnterDeath()
@@ -130,9 +126,9 @@ public class Goblin : Enemy, IHitable
         isStateComplete = true;
     }
 
-    IEnumerator WaitForDurationToGetHitAgain(float duration)
+    IEnumerator WaitForDurationToGetHitAgain()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         isStateComplete = true;
         getHit = false;
         canAttack = true;
@@ -153,16 +149,6 @@ public class Goblin : Enemy, IHitable
         if (hitPlayer || getHit)
         {
             isStateComplete = true;
-        }
-    }
-
-    public void TakeDamage(int dmg)
-    {
-        if (!getHit)
-        {
-            hp--;
-            getHit = true;
-            SelectState();
         }
     }
 }
