@@ -7,14 +7,14 @@ public class PlayerHitState : State
     public override void EnterState()
     {
         base.EnterState();
-        rb.linearVelocity = new Vector2(-knockBack * playerMovement.transform.localScale.x / playerMovement.dash.dash, 10f);
+        rb.linearVelocity = new Vector2(-knockBack * playerController.transform.localScale.x / playerController.dash.dash, 10f);
         StartCoroutine(WaitForCanBeHitAgain());
     }
 
     IEnumerator WaitForCanBeHitAgain()
     {
         yield return new WaitForSeconds(0.5f);
-        playerMovement.canBeHit = true;
+        playerController.canBeHit = true;
         ExitState();
     }
 }

@@ -8,13 +8,13 @@ public class PlayerFallState : State
 
     public override void UpdateState()
     {
-        if (playerMovement.canJumpTheSecondTime && Input.GetKeyDown(KeyCode.W))
+        if (playerController.canJumpTheSecondTime && Input.GetKeyDown(KeyCode.W))
         {
             ExitState();
-            playerMovement.state = playerMovement.doubleJump;
-            playerMovement.state.EnterState();
+            playerController.state = playerController.doubleJump;
+            playerController.state.EnterState();
         }
-        if (playerMovement.isGrounded || rb.linearVelocity.y >= 0f)
+        if (playerController.isGrounded || rb.linearVelocity.y >= 0f)
         {
             ExitState();
         }
@@ -25,7 +25,7 @@ public class PlayerFallState : State
         base.ExitState();
         GameObject dust = afterJumpDustPool.GetObject();
         dust.transform.position = bottomTransform.position;
-        playerMovement.canJumpTheSecondTime = false;
+        playerController.canJumpTheSecondTime = false;
         afterJumpDustPool.ReturnToPool(dust);
     }
 }

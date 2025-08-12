@@ -7,7 +7,7 @@ public class PlayerDoubleJumpState : State
     {
         base.EnterState();
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpForce);
-        playerMovement.canJumpTheSecondTime = false;
+        playerController.canJumpTheSecondTime = false;
     }
 
     public override void UpdateState()

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class CameraFollowObj : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform playerTransform;
     [SerializeField] private float rotationTime;
     private bool isFacingRight;
-    private PlayerMovement playerMovement;
+    private PlayerController playerController;
 
     private void Awake()
     {
@@ -14,14 +14,14 @@ public class CameraFollowObj : MonoBehaviour
 
     private void Start()
     {
-        player = FindAnyObjectByType<PlayerMovement>().transform;
-        playerMovement = player.gameObject.GetComponent<PlayerMovement>();
-        isFacingRight = playerMovement.IsFacingRight();
+        playerTransform = FindAnyObjectByType<PlayerController>().transform;
+        playerController = playerTransform.gameObject.GetComponent<PlayerController>();
+        isFacingRight = playerController.IsFacingRight();
     }
 
     private void Update()
     {
-        transform.position = player.position;
+        transform.position = playerTransform.position;
     }
 
     public void TurnAround()

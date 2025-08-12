@@ -7,7 +7,7 @@ public class PlayerRunState : State
     [Range(0f, 1f)] public float groundDecay;
     public override void UpdateState()
     {
-        if (!playerMovement.isGrounded || Mathf.Abs(rb.linearVelocity.x) < 1f)
+        if (!playerController.isGrounded || Mathf.Abs(rb.linearVelocity.x) < 1f)
         {
             ExitState();
         }

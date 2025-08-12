@@ -10,7 +10,7 @@ public abstract class State : MonoBehaviour
     /// </summary>
     protected Animator animator;
     protected Rigidbody2D rb;
-    protected PlayerMovement playerMovement;
+    protected PlayerController playerController;
 
     public virtual void EnterState()
     {
@@ -25,21 +25,21 @@ public abstract class State : MonoBehaviour
         isComplete = true;
     }
 
-    public void Setup(Animator animator, Rigidbody2D rb, PlayerMovement playerMovement)
+    public void Setup(Animator animator, Rigidbody2D rb, PlayerController playerController)
     {
         this.animator = animator;
         this.rb = rb;
-        this.playerMovement = playerMovement;
+        this.playerController = playerController;
     }
     
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && playerMovement.canBeHit)
+        if (collision.gameObject.CompareTag("Enemy") && playerController.canBeHit)
         {
-            playerMovement.state.ExitState();
-            playerMovement.state = playerMovement.hit;
-            playerMovement.canBeHit = false;
-            playerMovement.state.EnterState();
+            playerController.state.ExitState();
+            playerController.state = playerController.hit;
+            playerController.canBeHit = false;
+            playerController.state.EnterState();
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Trap
   - Vase
+  - Stone
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Enemy
   - Slash
   - Trap
-  - 
-  - 
+  - Stone
+  - PressurePlate
   - 
   - 
   - 
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 3595035929
+    locked: 0
+  - name: Object
+    uniqueID: 1237304649
     locked: 0
   - name: Player
     uniqueID: 2865445599

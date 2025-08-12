@@ -9,8 +9,8 @@ public class PlayerAttackState : State
         base.EnterState();
         rb.linearVelocityY = 0f;
         GameObject slash = attackEffectPool.GetObject();
-        slash.transform.position = transform.position + (playerMovement.IsFacingRight() ? Vector3.right : Vector3.left) * 1.2f;
-        slash.transform.localScale = new Vector2(playerMovement.IsFacingRight() ? 1f : -1f, slash.transform.localScale.y);
+        slash.transform.position = transform.position + (playerController.IsFacingRight() ? Vector3.right : Vector3.left) * 1.2f;
+        slash.transform.localScale = new Vector2(playerController.IsFacingRight() ? 1f : -1f, slash.transform.localScale.y);
         StartCoroutine(ExitAttack(0.2f, slash));
     }
     public override void UpdateState()

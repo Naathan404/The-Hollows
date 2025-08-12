@@ -4,11 +4,11 @@ using UnityEngine;
 public class Slab : MonoBehaviour
 {
     [SerializeField] private float temp;
-    private PlayerMovement player;
+    private PlayerController player;
 
     private void Start()
     {
-        player = FindAnyObjectByType<PlayerMovement>();
+        player = FindAnyObjectByType<PlayerController>();
     }
 
     private void Update()

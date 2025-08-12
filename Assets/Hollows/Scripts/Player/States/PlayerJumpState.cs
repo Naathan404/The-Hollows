@@ -19,11 +19,11 @@ public class PlayerJumpState : State
     }
     public override void UpdateState()
     {
-        if (playerMovement.canJumpTheSecondTime && Input.GetKeyDown(KeyCode.W))
+        if (playerController.canJumpTheSecondTime && Input.GetKeyDown(KeyCode.W))
         {
             ExitState();
-            playerMovement.state = playerMovement.doubleJump;
-            playerMovement.state.EnterState();
+            playerController.state = playerController.doubleJump;
+            playerController.state.EnterState();
         }
         else if (rb.linearVelocity.y <= 0)
         {
@@ -32,14 +32,9 @@ public class PlayerJumpState : State
         }
     }
 
-    public override void ExitState()
-    {
-        base.ExitState();
-    }
-
     IEnumerator WaitForTheSecondJump()
     {
         yield return new WaitForSeconds(0.1f);
-        playerMovement.canJumpTheSecondTime = true;
+        playerController.canJumpTheSecondTime = true;
     }
 }

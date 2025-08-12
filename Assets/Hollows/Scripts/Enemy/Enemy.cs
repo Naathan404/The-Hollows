@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
     [SerializeField] protected int hp;
     [SerializeField] protected float speed;
     [SerializeField] protected EnemyState state;
-    protected PlayerMovement player;
+    protected PlayerController player;
     protected LayerMask playerLayerMask;
     protected LayerMask groundLayerMask;
     protected Vector2 dir;
@@ -24,7 +24,6 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        player = FindAnyObjectByType<PlayerMovement>();
 
         // Get layermasks
         groundLayerMask = LayerMask.GetMask("Ground");
@@ -34,6 +33,7 @@ public abstract class Enemy : MonoBehaviour, IHitable
     protected virtual void Start()
     {
         SelectState();
+        player = FindAnyObjectByType<PlayerController>();
     }
     protected abstract void SelectState();
     protected abstract void EnterState();
@@ -43,15 +43,16 @@ public abstract class Enemy : MonoBehaviour, IHitable
     {
         if (other.gameObject.CompareTag("Player") && canAttack)
         {
+            Debug.Log("Da bat duoc va cham voi " + other.name);
             player.TakeDamage(1);
         }
     }
 
     public void TakeDamage(int dmg)
     {
-        if (!getHit)
+        if (!getHit && hp >= dmg)    // Only takes damage if enemy can be hit
         {
-            hp--;
+            hp -= dmg;
             getHit = true;
             SelectState();
         }

@@ -1,15 +1,10 @@
-using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.XR;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    /// <summary>
-    /// States controller
-    /// </summary>
+    [Header("HP Settings")]
+    [SerializeField] private int hp;
+    // States controller
     [Header("States References")]
     public PlayerIdleState idle;
     public PlayerRunState run;
@@ -19,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerDoubleJumpState doubleJump;
     public PlayerAttackState attack;
     public PlayerHitState hit;
+    public PlayerPushState push;
     public State state;
 
     [Header("Ground Check Settings")]
@@ -30,11 +26,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float coyoteCounter;
     [SerializeField] private float dashCoolDown;
-    public bool canJumpTheSecondTime = false;
+    [HideInInspector] public bool canBeHit = true;
+    [HideInInspector] public bool canJumpTheSecondTime = false;
     private float dashCounter;
-    public bool canBeHit = true;
-
     private bool isFacingRight = true;
+
+    [Header("Raycast ")]
+    public RaycastHit2D hitPushableObject;
+    [SerializeField] private LayerMask pushableObjLayerMask;
+    [SerializeField] private float rayLen;
 
     private Rigidbody2D rb;
     [SerializeField] private Animator animator;
@@ -59,7 +59,9 @@ public class PlayerMovement : MonoBehaviour
         doubleJump.Setup(animator, rb, this);
         attack.Setup(animator, rb, this);
         hit.Setup(animator, rb, this);
+        push.Setup(animator, rb, this);
 
+        // Default state is idle
         state = idle;
         state.EnterState();
         dashCounter = dashCoolDown;
@@ -75,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         HandleJump();
         HandleDash();
         HandleAttack();
+        HandlePush();
 
         dashCounter -= Time.deltaTime;
 
@@ -92,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         Flip();
         ApplyFriction();
     }
-
+    // Select new state to enter
     private void SelectState()
     {
         if (isGrounded)
@@ -110,16 +113,16 @@ public class PlayerMovement : MonoBehaviour
         }
         state.EnterState();
     }
-
+    // Move with accelaration
     private void Move()
     {
         float increament = moveDirection * run.accelaration;
         float newSpeed = Mathf.Clamp(rb.linearVelocity.x + increament, -run.moveSpeed, run.moveSpeed);
         rb.linearVelocity = new Vector2(newSpeed * dash.dash, rb.linearVelocity.y);
     }
+    // Flip player
     private void Flip()
     {
-        /// Flip player
         if (moveDirection > 0 && !isFacingRight)
         {
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
@@ -133,9 +136,6 @@ public class PlayerMovement : MonoBehaviour
             cameraFollowObj.TurnAround();
         }
     }
-
-    public bool IsFacingRight() => isFacingRight;
-
 
     private void HandleJump()
     {
@@ -159,20 +159,6 @@ public class PlayerMovement : MonoBehaviour
             state.EnterState();
         }
     }
-
-    private void ApplyFriction()
-    {
-        if (isGrounded && moveDirection == 0)
-            rb.linearVelocity *= run.groundDecay;
-    }
-
-    private void CheckGround()
-    {
-        isGrounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
-        if (isGrounded) coyoteCounter = coyoteTime;
-        else coyoteCounter -= Time.deltaTime;
-    }
-
     private void HandleAttack()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -183,15 +169,52 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void HandlePush()
+    {
+        hitPushableObject = Physics2D.Raycast(
+            this.transform.position,
+            isFacingRight ? Vector2.right : Vector2.left,
+            rayLen, pushableObjLayerMask);
+        if (hitPushableObject)
+        {
+            if ((isFacingRight && moveDirection > 0) || (!isFacingRight && moveDirection < 0))
+            {
+                state.ExitState();
+                state = push;
+                state.EnterState();
+            }
+        }
+    }
+
+    private void ApplyFriction()
+    {
+        if (isGrounded && moveDirection == 0)
+            rb.linearVelocity *= run.groundDecay;
+    }
+
+    // Ground check
+    private void CheckGround()
+    {
+        isGrounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
+        if (isGrounded) coyoteCounter = coyoteTime;
+        else coyoteCounter -= Time.deltaTime;
+    }
+
+
     public void TakeDamage(int dmg)
     {
         if (!canBeHit) return;
+        // Decrease hp
+        hp -= dmg;
+        Debug.Log($"Current HP: {hp}");
+        // Enter state hit
         state.ExitState();
         state = hit;
         canBeHit = false;
         state.EnterState();
     }
 
+    // Take damage if the player collide with a trap
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
@@ -200,6 +223,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Getters
     public Transform GetBottomPosTransform() => groundCheck.transform;
+    public bool IsFacingRight() => isFacingRight;
     public Rigidbody2D GetRb2D() => rb;
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Vector3 direc = isFacingRight ? Vector3.right : Vector2.left;
+        Gizmos.DrawLine(this.transform.position, this.transform.position + direc * rayLen);
+    }
 }

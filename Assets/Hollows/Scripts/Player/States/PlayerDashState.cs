@@ -30,7 +30,7 @@ public class PlayerDashState : State
         GameObject dust = beforeJumpDustPool.GetObject();
         dust.transform.position = bottomTransform.position;
         beforeJumpDustPool.ReturnToPool(dust);
-        firstPos = playerMovement.transform.position;
+        firstPos = playerController.transform.position;
     }
 
     public override void UpdateState()
@@ -46,12 +46,12 @@ public class PlayerDashState : State
 
     private void CreateGhost()
     {
-        ghostGap = maxGhostCount > 1 ? Mathf.Abs(playerMovement.transform.position.x - firstPos.x) / (maxGhostCount - 1) : 0f;
+        ghostGap = maxGhostCount > 1 ? Mathf.Abs(playerController.transform.position.x - firstPos.x) / (maxGhostCount - 1) : 0f;
         GameObject ghost = objectPooler.GetObject();
-        ghost.transform.localScale = playerMovement.transform.localScale;
+        ghost.transform.localScale = playerController.transform.localScale;
         ghost.GetComponent<SpriteRenderer>().sortingOrder = ghosts.Count + 1;
-        float gap = playerMovement.IsFacingRight() ? ghostGap * ghosts.Count : -ghosts.Count * ghostGap;
-        ghost.transform.position = new Vector2(playerMovement.transform.position.x - gap, playerMovement.transform.position.y);
+        float gap = playerController.IsFacingRight() ? ghostGap * ghosts.Count : -ghosts.Count * ghostGap;
+        ghost.transform.position = new Vector2(playerController.transform.position.x - gap, playerController.transform.position.y);
         ghosts.Add(ghost);
         StartCoroutine(FadeOut(ghost, ghostDuration));
     }

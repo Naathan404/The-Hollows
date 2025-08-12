@@ -129,9 +129,9 @@ public class Goblin : Enemy
     IEnumerator WaitForDurationToGetHitAgain()
     {
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        isStateComplete = true;
         getHit = false;
         canAttack = true;
+        isStateComplete = true;
     }
 
     IEnumerator DeactivateObject(float duration)
