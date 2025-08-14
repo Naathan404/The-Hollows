@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 792df362728185d4d9dc0745b3985ea8
+guid: 2e08cd5f8739d104994735cb3cbe560f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2042717513481119871
-    second: bomber_goblin_death_anim_strip_6_0
+      213: -2542299188786928573
+    second: bomb_thrown_anim_strip_3_0
   - first:
-      213: -8665689891846363644
-    second: bomber_goblin_death_anim_strip_6_1
+      213: -2939640930192259152
+    second: bomb_thrown_anim_strip_3_1
   - first:
-      213: 5248873858158086749
-    second: bomber_goblin_death_anim_strip_6_2
+      213: 4587624303998243795
+    second: bomb_thrown_anim_strip_3_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bomber_goblin_death_anim_strip_6_0
+      name: bomb_thrown_anim_strip_3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 14
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +147,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1871d788e3fc6a3e0800000000000000
-      internalID: -2042717513481119871
+      spriteID: 34467938b50f7bcd0800000000000000
+      internalID: -2542299188786928573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomber_goblin_death_anim_strip_6_1
+      name: bomb_thrown_anim_strip_3_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b701bc162c4437d0800000000000000
+      internalID: -2939640930192259152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb_thrown_anim_strip_3_2
       rect:
         serializedVersion: 2
         x: 16
-        y: 3
-        width: 14
-        height: 13
+        y: 0
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,30 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 406edc6c4f84db780800000000000000
-      internalID: -8665689891846363644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bomber_goblin_death_anim_strip_6_2
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 5
-        width: 60
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5ac85ad6feb7d840800000000000000
-      internalID: 5248873858158086749
+      spriteID: 3d393ca8ff38aaf30800000000000000
+      internalID: 4587624303998243795
       vertices: []
       indices: 
       edges: []
@@ -201,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f9ac8a58f5276d147bcd4ad16b2f6b11
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bomber_goblin_death_anim_strip_6_0: -2042717513481119871
-      bomber_goblin_death_anim_strip_6_1: -8665689891846363644
-      bomber_goblin_death_anim_strip_6_2: 5248873858158086749
+      bomb_thrown_anim_strip_3_0: -2542299188786928573
+      bomb_thrown_anim_strip_3_1: -2939640930192259152
+      bomb_thrown_anim_strip_3_2: 4587624303998243795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

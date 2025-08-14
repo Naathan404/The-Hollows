@@ -26,9 +26,6 @@ public class Slime : Enemy
             this.transform.localScale = new Vector3(-1f, 1f);
         if (detectPlayerFromTheLeft)
             this.transform.localScale = new Vector3(1f, 1f);
-        // Draw rays
-        Debug.DrawRay(this.transform.position + new Vector3(0, 0.5f), Vector2.left * detectionDistance, Color.red);
-        Debug.DrawRay(this.transform.position + new Vector3(0, 0.5f), Vector2.right * detectionDistance, Color.red);
 
         if (isStateComplete)
             SelectState();
@@ -153,5 +150,12 @@ public class Slime : Enemy
         GameObject dust1 = fallDustPooler.GetObject();
         dust1.transform.position = this.transform.position;
         fallDustPooler.ReturnToPool(dust1);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(this.transform.position + new Vector3(0, 0.5f), this.transform.position + Vector3.left * detectionDistance);
+        Gizmos.DrawLine(this.transform.position + new Vector3(0, 0.5f), this.transform.position + Vector3.right * detectionDistance);
     }
 }

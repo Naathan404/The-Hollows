@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 02e618eeeee75184fab0acd27d68052e
+guid: be8e57624180d4a46ad61f2f0d24336a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4529357280582004484
-    second: bomber_goblin_attack_anim_strip_6_0
+      213: -3095282964131620661
+    second: bomb_on_ground_anim_strip_8_0
   - first:
-      213: -8476611940600134197
-    second: bomber_goblin_attack_anim_strip_6_1
+      213: 8988081867551950553
+    second: bomb_on_ground_anim_strip_8_1
   - first:
-      213: -5212021237089792338
-    second: bomber_goblin_attack_anim_strip_6_2
+      213: -428833143504986590
+    second: bomb_on_ground_anim_strip_8_2
   - first:
-      213: 1879468426901525459
-    second: bomber_goblin_attack_anim_strip_6_3
+      213: -8074175677164752507
+    second: bomb_on_ground_anim_strip_8_3
   - first:
-      213: -8453559638860079850
-    second: bomber_goblin_attack_anim_strip_6_4
+      213: 2545915500677710049
+    second: bomb_on_ground_anim_strip_8_4
   - first:
-      213: 5188864175324568156
-    second: bomber_goblin_attack_anim_strip_6_5
+      213: -2950087604889697792
+    second: bomb_on_ground_anim_strip_8_5
+  - first:
+      213: -1181652202432709917
+    second: bomb_on_ground_anim_strip_8_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bomber_goblin_attack_anim_strip_6_0
+      name: bomb_on_ground_anim_strip_8_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 15
-        height: 15
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf094160d8d7421c0800000000000000
-      internalID: -4529357280582004484
+      spriteID: bc8dd9b2b885b05d0800000000000000
+      internalID: -3095282964131620661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomber_goblin_attack_anim_strip_6_1
+      name: bomb_on_ground_anim_strip_8_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 8
         y: 0
-        width: 15
-        height: 15
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +181,64 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc5c1bdd9560d5a80800000000000000
-      internalID: -8476611940600134197
+      spriteID: 9d6409f66d41cbc70800000000000000
+      internalID: 8988081867551950553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomber_goblin_attack_anim_strip_6_2
+      name: bomb_on_ground_anim_strip_8_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e987d278a7c0af0800000000000000
+      internalID: -428833143504986590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb_on_ground_anim_strip_8_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581fe7c1004c2ff80800000000000000
+      internalID: -8074175677164752507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb_on_ground_anim_strip_8_4
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 17
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +247,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eae8871ac4e2ba7b0800000000000000
-      internalID: -5212021237089792338
+      spriteID: 1e04e06b8a8e45320800000000000000
+      internalID: 2545915500677710049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomber_goblin_attack_anim_strip_6_3
+      name: bomb_on_ground_anim_strip_8_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002444e14fe2f07d0800000000000000
+      internalID: -2950087604889697792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb_on_ground_anim_strip_8_6
       rect:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 17
-        height: 16
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,52 +291,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d317009396351a10800000000000000
-      internalID: 1879468426901525459
+      spriteID: 3eab0f1259de99fe0800000000000000
+      internalID: -1181652202432709917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bomber_goblin_attack_anim_strip_6_4
+      name: bomb_on_ground_anim_strip_8_7
       rect:
         serializedVersion: 2
-        x: 65
+        x: 56
         y: 0
-        width: 16
-        height: 13
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 61d5a2e1c4ceeaa80800000000000000
-      internalID: -8453559638860079850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bomber_goblin_attack_anim_strip_6_5
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5a98f5c97c820840800000000000000
-      internalID: 5188864175324568156
+      spriteID: eff2a335fd352ef42a43ae46ca9e2c33
+      internalID: -1417802185
       vertices: []
       indices: 
       edges: []
@@ -276,7 +323,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b428f9ab9c8eceb408126e2bdd58fca1
     internalID: 0
     vertices: []
     indices: 
@@ -286,12 +333,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bomber_goblin_attack_anim_strip_6_0: -4529357280582004484
-      bomber_goblin_attack_anim_strip_6_1: -8476611940600134197
-      bomber_goblin_attack_anim_strip_6_2: -5212021237089792338
-      bomber_goblin_attack_anim_strip_6_3: 1879468426901525459
-      bomber_goblin_attack_anim_strip_6_4: -8453559638860079850
-      bomber_goblin_attack_anim_strip_6_5: 5188864175324568156
+      bomb_on_ground_anim_strip_8_0: -3095282964131620661
+      bomb_on_ground_anim_strip_8_1: 8988081867551950553
+      bomb_on_ground_anim_strip_8_2: -428833143504986590
+      bomb_on_ground_anim_strip_8_3: -8074175677164752507
+      bomb_on_ground_anim_strip_8_4: 2545915500677710049
+      bomb_on_ground_anim_strip_8_5: -2950087604889697792
+      bomb_on_ground_anim_strip_8_6: -1181652202432709917
+      bomb_on_ground_anim_strip_8_7: -1417802185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -56,11 +56,11 @@ TagManager:
   - name: MaceTrap
     uniqueID: 2032229347
     locked: 0
-  - name: Enemy
-    uniqueID: 3595035929
-    locked: 0
   - name: Object
     uniqueID: 1237304649
+    locked: 0
+  - name: Enemy
+    uniqueID: 3595035929
     locked: 0
   - name: Player
     uniqueID: 2865445599

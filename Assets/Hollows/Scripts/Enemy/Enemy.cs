@@ -7,9 +7,9 @@ public abstract class Enemy : MonoBehaviour, IHitable
     [SerializeField] protected int hp;
     [SerializeField] protected float speed;
     [SerializeField] protected EnemyState state;
+    [SerializeField] protected LayerMask groundLayerMask;
     protected PlayerController player;
     protected LayerMask playerLayerMask;
-    protected LayerMask groundLayerMask;
     protected Vector2 dir;
     protected bool isStateComplete = false;
     protected bool getHit = false;
@@ -26,7 +26,6 @@ public abstract class Enemy : MonoBehaviour, IHitable
         animator = GetComponent<Animator>();
 
         // Get layermasks
-        groundLayerMask = LayerMask.GetMask("Ground");
         playerLayerMask = LayerMask.GetMask("Player");
     }
 
