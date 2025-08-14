@@ -8,7 +8,7 @@ public class PlayerFallState : State
 
     public override void UpdateState()
     {
-        if (playerController.canJumpTheSecondTime && Input.GetKeyDown(KeyCode.W))
+        if (playerController.canJumpTheSecondTime && Input.GetButtonDown("Jump"))
         {
             ExitState();
             playerController.state = playerController.doubleJump;

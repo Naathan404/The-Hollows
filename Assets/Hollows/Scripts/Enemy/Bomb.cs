@@ -45,7 +45,6 @@ public class Bomb : MonoBehaviour
         this.transform.position = startPoint.position;
         len = Mathf.Abs(target.position.x - startPoint.position.x);
         angle = Mathf.Lerp(maxAngle, minAngle, len / 5f);
-        angle = minAngle;
         vel0 = Mathf.Sqrt(Mathf.Abs(Physics2D.gravity.y * rb.gravityScale) * len) / Mathf.Sin(2 * angle * Mathf.Deg2Rad);
         velX = vel0 * Mathf.Cos(angle * Mathf.Deg2Rad) * dir; // dir == 1 if throw to the right and == -1 if throw to the left
         velY = vel0 * Mathf.Sin(angle * Mathf.Deg2Rad);

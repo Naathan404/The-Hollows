@@ -139,11 +139,11 @@ public class PlayerController : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && (isGrounded || coyoteCounter > 0f))
+        if (Input.GetButtonDown("Jump") && (isGrounded || coyoteCounter > 0f))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump.jumpForce).normalized * jump.jumpForce;
         }
-        else if (!Input.GetKey(KeyCode.W) && rb.linearVelocity.y > 0f)
+        else if (!Input.GetButton("Jump") && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.8f);
         }
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleDash()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (moveDirection != 0 || !isGrounded) && dashCounter <= 0f)
+        if (Input.GetButtonDown("Dash") && (moveDirection != 0 || !isGrounded) && dashCounter <= 0f)
         {
             state.ExitState();
             state = dash;
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetButtonDown("Attack"))
         {
             state.ExitState();
             state = attack;

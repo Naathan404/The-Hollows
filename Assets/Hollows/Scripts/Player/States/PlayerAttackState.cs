@@ -16,7 +16,7 @@ public class PlayerAttackState : State
     public override void UpdateState()
     {
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetButtonDown("Jump"))
             ExitState();
     }
 

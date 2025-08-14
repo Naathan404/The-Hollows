@@ -104,6 +104,8 @@ public class Bomber : Enemy
     private void EnterHit()
     {
         animator.Play("BomberHit");
+        canAttack = false;
+        StartCoroutine(ExitHit());
     }
     private void EnterDeath()
     {
@@ -116,6 +118,14 @@ public class Bomber : Enemy
         {
             isStateComplete = true;
         }
+    }
+
+    IEnumerator ExitHit()
+    {
+        yield return new WaitForSeconds(0.2f);
+        getHit = false;
+        canAttack = true;
+        isStateComplete = true;
     }
 
     IEnumerator ExitAttack()
