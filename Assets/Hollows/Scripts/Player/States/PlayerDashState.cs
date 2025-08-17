@@ -50,7 +50,7 @@ public class PlayerDashState : State
         GameObject ghost = objectPooler.GetObject();
         ghost.transform.localScale = playerController.transform.localScale;
         ghost.GetComponent<SpriteRenderer>().sortingOrder = ghosts.Count + 1;
-        float gap = playerController.IsFacingRight() ? ghostGap * ghosts.Count : -ghosts.Count * ghostGap;
+        float gap = playerController.IsFacingRight() ? ghostGap * ghosts.Count : - ghosts.Count * ghostGap;
         ghost.transform.position = new Vector2(playerController.transform.position.x - gap, playerController.transform.position.y);
         ghosts.Add(ghost);
         StartCoroutine(FadeOut(ghost, ghostDuration));

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class Bomber : Enemy
     [SerializeField] private float timer;
     [SerializeField] private Transform startPoint;
     [SerializeField] private ObjectPooler bombPool;
-    private bool attackable = true;
+    private bool attackable = false;
 
     protected override void Start()
     {
@@ -34,8 +35,9 @@ public class Bomber : Enemy
             this.transform.localScale = new Vector3(1f, 1f);
         }
 
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        if(timer >= 0)
+            timer -= Time.deltaTime;
+        else
         {
             timer = attackCoolDown;
             attackable = true;
@@ -110,6 +112,7 @@ public class Bomber : Enemy
     private void EnterDeath()
     {
         animator.Play("BomberDeath");
+        StartCoroutine(ExitDeath());
     }
 
     private void UpdateIdle()
@@ -135,6 +138,12 @@ public class Bomber : Enemy
         bomb.SetActive(true);
         bomb.GetComponent<Bomb>().Throw(startPoint, player.transform, this.transform.localScale.x);
         isStateComplete = true;
+    }
+
+    IEnumerator ExitDeath()
+    {
+        yield return new WaitForSeconds(0.4f);
+        gameObject.SetActive(false);
     }
 
     private void OnDrawGizmos()

@@ -180,12 +180,12 @@ TextureImporter:
       name: explosion_anim_strip_10_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: explosion_anim_strip_10_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 32
         y: 0
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: explosion_anim_strip_10_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 4
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: explosion_anim_strip_10_3
       rect:
         serializedVersion: 2
-        x: 69
+        x: 96
         y: 0
-        width: 22
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: explosion_anim_strip_10_4
       rect:
         serializedVersion: 2
-        x: 84
-        y: 4
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: explosion_anim_strip_10_5
       rect:
         serializedVersion: 2
-        x: 99
+        x: 160
         y: 0
-        width: 26
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: explosion_anim_strip_10_6
       rect:
         serializedVersion: 2
-        x: 129
+        x: 192
         y: 0
-        width: 30
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +334,12 @@ TextureImporter:
       name: explosion_anim_strip_10_7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 2
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: explosion_anim_strip_10_8
       rect:
         serializedVersion: 2
-        x: 166
+        x: 256
         y: 0
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: explosion_anim_strip_10_9
       rect:
         serializedVersion: 2
-        x: 185
-        y: 2
-        width: 14
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -396,187 +396,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_10
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 19
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eee0d0009fe416680800000000000000
-      internalID: -8763636568531595538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_11
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 6
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: caf455185162d2730800000000000000
-      internalID: 3975875919844036524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_12
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 0
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf7e1836ea92e10e0800000000000000
-      internalID: -2297352930941868037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_13
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 19
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0a453b1370220e90800000000000000
-      internalID: -7061045587013711350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_14
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 2
-        width: 20
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec239a6a9a557eb80800000000000000
-      internalID: -8365623595683466546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_15
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 21
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5553eeaac6ed7c510800000000000000
-      internalID: 1569467553467479381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_16
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 0
-        width: 14
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b17b23f354091c10800000000000000
-      internalID: 2024654266088255920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_anim_strip_10_17
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 0
-        width: 70
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c30efbfda4403d0e0800000000000000
-      internalID: -2246447069499760580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 536809f64b464db41a92df6187fec86f
     internalID: 0
     vertices: []
     indices: 
@@ -588,14 +412,6 @@ TextureImporter:
     nameFileIdTable:
       explosion_anim_strip_10_0: 3794741136824393815
       explosion_anim_strip_10_1: -1812644004245757434
-      explosion_anim_strip_10_10: -8763636568531595538
-      explosion_anim_strip_10_11: 3975875919844036524
-      explosion_anim_strip_10_12: -2297352930941868037
-      explosion_anim_strip_10_13: -7061045587013711350
-      explosion_anim_strip_10_14: -8365623595683466546
-      explosion_anim_strip_10_15: 1569467553467479381
-      explosion_anim_strip_10_16: 2024654266088255920
-      explosion_anim_strip_10_17: -2246447069499760580
       explosion_anim_strip_10_2: 8582992290833687542
       explosion_anim_strip_10_3: -133856749009764635
       explosion_anim_strip_10_4: -7246479247531812022
