@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773045192616144305}
+  - component: {fileID: 2603509592680197358}
   - component: {fileID: 6156265023150717969}
   - component: {fileID: 119620207627883664}
   - component: {fileID: 4741339479892069630}
-  - component: {fileID: 2603509592680197358}
   - component: {fileID: 2024035309877414243}
   m_Layer: 0
   m_Name: Vase
@@ -36,6 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2603509592680197358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036889153689618862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78d2afa34fdc24428612c4310bf58ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardedItems:
+  - item: {fileID: 6404044124323706876, guid: 09a15180892f26f469159961b556378f, type: 3}
+    spawnRatio: 0.5
 --- !u!212 &6156265023150717969
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -159,18 +174,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.55965257, y: 0.49463248}
   m_EdgeRadius: 0
---- !u!114 &2603509592680197358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036889153689618862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d78d2afa34fdc24428612c4310bf58ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2024035309877414243
 Rigidbody2D:
   serializedVersion: 5

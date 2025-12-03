@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3368b92aece582844a5de13969521834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minAngle: 45
-  maxAngle: 80
+  minAngle: 40
+  maxAngle: 70
 --- !u!95 &765102950771732219
 Animator:
   serializedVersion: 7

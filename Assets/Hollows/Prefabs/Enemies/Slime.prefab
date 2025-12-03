@@ -51,9 +51,13 @@ MonoBehaviour:
   hp: 5
   speed: 1
   state: 0
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   detectionDistance: 5
   jumpForce: 120
   jumpCoolDown: 1.2
+  gravityScaleTimer: 0.3
   fallDustPooler: {fileID: 0}
 --- !u!212 &4986901884664874667
 SpriteRenderer:
@@ -97,7 +101,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -699931367
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7038833712251867961, guid: 8d7eae1c51c59a443b043b09261b10e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,7 +151,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -158,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3798142802014460654
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

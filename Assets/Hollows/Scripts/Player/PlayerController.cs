@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("HP Settings")]
     [SerializeField] private int hp;
+    [SerializeField] private int maxHP;
     // States controller
     [Header("States References")]
     public PlayerIdleState idle;
@@ -15,12 +16,13 @@ public class PlayerController : MonoBehaviour
     public PlayerAttackState attack;
     public PlayerHitState hit;
     public PlayerPushState push;
+    public PlayerDeathState death;
     public State state;
 
     [Header("Ground Check Settings")]
     [SerializeField] private BoxCollider2D groundCheck;
     [SerializeField] private LayerMask groundMask;
-    public bool isGrounded { get; private set; }
+    public bool isGrounded; /*{ get; private set; }*/
 
     [Header("Jump Settings")]
     [SerializeField] private float coyoteTime = 0.2f;
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         cameraFollowObj = GameObject.Find("CamFollowObj").GetComponent<CameraFollowObj>();
+        hp = maxHP;
 
         // Setup states
         idle.Setup(animator, rb, this);
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour
         attack.Setup(animator, rb, this);
         hit.Setup(animator, rb, this);
         push.Setup(animator, rb, this);
+        death.Setup(animator, rb, this);
 
         // Default state is idle
         state = idle;
@@ -141,7 +145,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && (isGrounded || coyoteCounter > 0f))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump.jumpForce).normalized * jump.jumpForce;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump.jumpForce);
         }
         else if (!Input.GetButton("Jump") && rb.linearVelocity.y > 0f)
         {
@@ -204,8 +208,9 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         if (!canBeHit) return;
-        // Decrease hp
-        hp -= dmg;
+        // Reduce hp
+        if(hp > 0)
+            hp -= dmg;
         Debug.Log($"Current HP: {hp}");
         // Enter state hit
         state.ExitState();
@@ -223,10 +228,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Heart"))
+        {
+            collision.GetComponent<ItemBase>()?.Collect();
+            if (hp < maxHP)
+            {
+                hp++;
+                Debug.Log($"Current HP: {hp}");
+                UIManager.Instance.AddHeart();
+            }
+        }        
+    }
+
     // Getters
     public Transform GetBottomPosTransform() => groundCheck.transform;
     public bool IsFacingRight() => isFacingRight;
     public Rigidbody2D GetRb2D() => rb;
+    public int GetMaxHP() => maxHP;
+    public int GetHP() => hp;
 
     void OnDrawGizmos()
     {

@@ -12,7 +12,7 @@ public class PlayerDoubleJumpState : State
 
     public override void UpdateState()
     {
-        if (rb.linearVelocity.y <= 0)
+        if (rb.linearVelocity.y <= 0 || playerController.isGrounded)
         {
             ExitState();
         }

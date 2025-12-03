@@ -133,7 +133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2176
   detectionDistance: 5
-  attackCoolDown: 2.5
+  attackCoolDown: 3
   timer: 0
   startPoint: {fileID: 2409341257484026903}
   bombPool: {fileID: 3199217373608830465}

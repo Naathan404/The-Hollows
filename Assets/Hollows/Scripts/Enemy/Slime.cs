@@ -10,6 +10,7 @@ public class Slime : Enemy
     [SerializeField] private float detectionDistance;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCoolDown;
+    [SerializeField] private float gravityScaleTimer;
     [SerializeField] private EffectPooler fallDustPooler;
     private float timer = 0f;
 
@@ -20,8 +21,8 @@ public class Slime : Enemy
     }
     private void Update()
     {
-        detectPlayerFromTheLeft = Physics2D.Raycast(this.transform.position + new Vector3(0, 0.5f), Vector2.left, detectionDistance, playerLayerMask);
-        detectPlayerFromTheRight = Physics2D.Raycast(this.transform.position + new Vector3(0, 0.5f), Vector2.right, detectionDistance, playerLayerMask);
+        detectPlayerFromTheLeft = Physics2D.Raycast(this.transform.position + new Vector3(0f, 0.5f), Vector2.left, detectionDistance, playerLayerMask);
+        detectPlayerFromTheRight = Physics2D.Raycast(this.transform.position + new Vector3(0f, 0.5f), Vector2.right, detectionDistance, playerLayerMask);
         if (detectPlayerFromTheRight)
             this.transform.localScale = new Vector3(-1f, 1f);
         if (detectPlayerFromTheLeft)
@@ -137,10 +138,13 @@ public class Slime : Enemy
     {
         animator.Play("SlimeWalk");
         // start jump
+        rb.gravityScale = 0f;
         yield return new WaitForSeconds(0.2f);
         rb.AddForce(new Vector2(jumpForce * -this.transform.localScale.x, 0f));
+        yield return new WaitForSeconds(gravityScaleTimer);
+        rb.gravityScale = 1f;
         // end jump
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.8f - gravityScaleTimer);
         animator.Play("slimeIdle");
         rb.linearVelocity = Vector2.zero;
         if (!detectPlayerFromTheLeft && !detectPlayerFromTheRight)
@@ -150,12 +154,12 @@ public class Slime : Enemy
         GameObject dust1 = fallDustPooler.GetObject();
         dust1.transform.position = this.transform.position;
         fallDustPooler.ReturnToPool(dust1);
-    }
+        }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(this.transform.position + new Vector3(0, 0.5f), this.transform.position + Vector3.left * detectionDistance);
-        Gizmos.DrawLine(this.transform.position + new Vector3(0, 0.5f), this.transform.position + Vector3.right * detectionDistance);
+        Gizmos.DrawLine(this.transform.position, this.transform.position + Vector3.left * detectionDistance);
+        Gizmos.DrawLine(this.transform.position, this.transform.position + Vector3.right * detectionDistance);
     }
 }

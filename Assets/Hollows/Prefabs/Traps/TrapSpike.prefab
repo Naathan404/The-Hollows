@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spike: {fileID: 9076733388706477770}
   firstTriggerCoolDown: 1
-  triggerCoolDown: 2
+  triggerCoolDown: 1.5
   counter: 0
   timeToWait: 0.08
 --- !u!212 &4156374862661973114
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 164983425
-  m_SortingLayer: 3
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: -1744325920, guid: 5cf448b671267b6479a402578f6a18e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakDusts: {fileID: 0}
-  rayDis: 0.5
+  rayDis: 0.6
 --- !u!212 &8415613273632125916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 164983425
-  m_SortingLayer: 3
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -8674334689624491547, guid: aaceeb4e0f326f842b19629fa29de699, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

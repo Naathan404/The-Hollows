@@ -10,6 +10,7 @@ TagManager:
   - Trap
   - Vase
   - Stone
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Trap
   - Stone
   - PressurePlate
-  - 
-  - 
+  - Item
+  - Fauna
   - 
   - 
   - 

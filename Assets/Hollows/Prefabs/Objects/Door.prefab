@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4525b2bb14cfdae47b93252883219b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level#1
+  levelSceneToLoad: Level#1
   button: {fileID: 2952133975184655671}
   transition: {fileID: 8431233218629502649}
   transitionDuration: 1
@@ -332,7 +332,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 488685345, guid: fa29e01c2ab90084fbb7b1661a00b027, type: 3}
+  m_Sprite: {fileID: 1186016242, guid: fa29e01c2ab90084fbb7b1661a00b027, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

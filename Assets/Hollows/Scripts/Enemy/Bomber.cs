@@ -125,7 +125,7 @@ public class Bomber : Enemy
 
     IEnumerator ExitHit()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         getHit = false;
         canAttack = true;
         isStateComplete = true;

@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
     {
         if(button.activeInHierarchy)
         {
-            if(Input.GetKeyDown(KeyCode.S))
+            if(Input.GetKeyDown(KeyCode.UpArrow))
                 StartCoroutine(LoadNextScene());
         }
     }
